@@ -1,0 +1,28 @@
+name: multi_window_test
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  desktop_lifecycle: ^0.1.1
+  desktop_multi_window: ^0.2.0
+  flutter:
+    sdk: flutter
+  logger: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
+
+scripts:
+  gen: dart run build_runner build --delete-conflicting-outputs
+  build_macos: flutter build macos --release -t lib/main.dart
+  build_windows: flutter build windows --release -t lib/main.dart
+
+flutter:
+  uses-material-design: true
